@@ -9,6 +9,7 @@ describe('', function() {
       expect($inflector.camelize('snake-case')).toEqual('snakeCase');
       expect($inflector.camelize('snake_case')).toEqual('snakeCase');
       expect($inflector.camelize('spaced case')).toEqual('spacedCase');
+      expect($inflector.camelize('dashed-constant', true)).toEqual('DashedConstant');
     }));
   });
 
