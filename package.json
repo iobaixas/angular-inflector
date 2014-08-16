@@ -10,6 +10,11 @@
     "grunt-contrib-uglify": "*",
     "grunt-bower": "*",
     "grunt-bower-task": "*",
-    "grunt-karma": "latest"
+    "grunt-karma": "~0.8",
+    "karma-cli": "*",
+    "karma-jasmine": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "karma-osx-reporter": "*"
   }
 }

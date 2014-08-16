@@ -11,27 +11,33 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		// libraries
-		'bower_components/angular/angular.js',
-		'bower_components/angular-mocks/angular-mocks.js',
+    	// libraries
+  		'bower_components/angular/angular.js',
+  		'bower_components/angular-mocks/angular-mocks.js',
 
-		// our app
-        'src/*.js',
+	     // our app
+      'src/*.js',
 
-		// tests
-		'test/**/*.js'
+  		// tests
+  		'test/**/*.js'
     ],
 
+    // karma plugins
+    plugins: [
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-osx-reporter'
+    ],
 
     // list of files to exclude
     exclude: [
 
     ],
 
-
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit'
-    reporters: ['progress'],
+    reporters: ['progress', 'osx'],
 
 
     // web server port
