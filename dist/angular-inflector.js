@@ -1,6 +1,6 @@
 /**
  * Angular inflection library
- * @version v0.0.3 - 2013-12-09
+ * @version v0.0.4 - 2014-08-16
  * @link https://github.com/platanus/angular-inflector
  * @author Ignacio Baixas <ignacio@platan.us>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -23,7 +23,7 @@ angular.module('platanus.inflector', [])
       // The default separator is '-'
       parameterize: function(_string, _sep) {
         if (typeof _string !== 'string') return _string;
-        return _string.replace(/[A-Z]/g, function (_match, _index) {
+        return _string.replace(/(?:[A-Z]+|[0-9]+)/g, function (_match, _index) {
           return _index === 0 ? _match : (_sep || '-') + _match;
         }).toLowerCase();
       },
