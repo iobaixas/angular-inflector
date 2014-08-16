@@ -3,8 +3,6 @@ Platanus Angular Inflector Utilities [![Build Status](https://secure.travis-ci.o
 
 Small suite of inflector functions, hopefully this lib will no longer be needed when angular makes the inflector functions they use part of the public api.
 
-A couple of angular components to handle chilean rut validation and formatting.
-
 ## Installation:
 
 **Optional** Use bower to retrieve package
