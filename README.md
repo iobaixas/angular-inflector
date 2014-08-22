@@ -1,4 +1,4 @@
-Platanus Angular Inflector Utilities [![Build Status](https://secure.travis-ci.org/platanus/angular-inflector.png)](https://travis-ci.org/platanus/angular-inflector)
+Platanus Angular Inflector Utilities [![Build Status](https://travis-ci.org/iobaixas/angular-inflector.svg)](https://travis-ci.org/iobaixas/angular-inflector)
 ===============
 
 Small suite of inflector functions, hopefully this lib will no longer be needed when angular makes the inflector functions they use part of the public api.
