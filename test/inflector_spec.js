@@ -32,5 +32,23 @@ describe('', function() {
       expect($inflector.dasherize('spaced case')).toEqual('spaced-case');
     }));
   });
+
+  describe('pluralize', function() {
+    it('should pluralize', inject(function($inflector) {
+      expect($inflector.pluralize('snake')).toEqual('snakes');
+      expect($inflector.pluralize('Water')).toEqual('Water');
+      expect($inflector.pluralize('MOUSE')).toEqual('Mice'); // capital letter are not preserved.
+      expect($inflector.pluralize('Index')).toEqual('Indexes');
+    }));
+  });
+
+  describe('singularize', function() {
+    it('should singularize', inject(function($inflector) {
+      expect($inflector.singularize('snakes')).toEqual('snake');
+      expect($inflector.singularize('Water')).toEqual('Water');
+      expect($inflector.singularize('MICE')).toEqual('Mouse'); // capital letter are not preserved.
+      expect($inflector.singularize('Indexes')).toEqual('Index');
+    }));
+  });
 });
 
