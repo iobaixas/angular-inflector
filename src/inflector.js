@@ -6,7 +6,7 @@ angular.module('platanus.inflector', [])
    *
    * The inflectorProvider exposes inflector configuration options, mainly related to locales.
    */
-  .provider('$inflector', [function () {
+  .provider('inflector', [function () {
 
     var activeLocale = 'en', localeMap = {
       /**
