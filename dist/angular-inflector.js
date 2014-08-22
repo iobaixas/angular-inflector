@@ -1,6 +1,6 @@
 /**
  * Angular inflection library
- * @version v0.1.0 - 2014-08-22
+ * @version v0.2.0 - 2014-08-22
  * @link https://github.com/platanus/angular-inflector
  * @author Ignacio Baixas <ignacio@platan.us>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -16,7 +16,7 @@ angular.module('platanus.inflector', [])
    *
    * The inflectorProvider exposes inflector configuration options, mainly related to locales.
    */
-  .provider('$inflector', [function () {
+  .provider('inflector', [function () {
 
     var activeLocale = 'en', localeMap = {
       /**
