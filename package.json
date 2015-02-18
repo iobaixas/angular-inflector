@@ -1,8 +1,19 @@
 {
+  "name": "angular-inflector",
+  "version": "0.2.0",
+  "description": "Angular inflection library",
+  "license": "MIT",
+  "author": "Ignacio Baixas <ignacio@platan.us>",
+  "homepage": "https://github.com/platanus/angular-inflector",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/platanus/angular-inflector.git"
+  },
+  "main": "dist/angular-inflector.js",
+  "dependencies": {},
   "engines": {
     "node": ">= 0.9"
   },
-  "dependencies": {},
   "devDependencies": {
     "grunt-cli": ">= 0.1.7",
     "grunt-contrib-concat": "*",
@@ -15,6 +26,8 @@
     "karma-jasmine": "*",
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
-    "karma-osx-reporter": "*"
+    "karma-osx-reporter": "*",
+    "grunt-conventional-changelog": "1.1.0",
+    "grunt-git": "^0.2.14"
   }
 }

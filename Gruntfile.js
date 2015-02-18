@@ -75,6 +75,43 @@ module.exports = function(grunt) {
       dev: {
         autoWatch: true
       }
+    },
+    changelog: {
+      options: {
+        dest: 'CHANGELOG.md'
+      }
+    },
+    gitcommit: {
+      bump: {
+        options: {
+          message: '<%= pkg.version %>',
+          noStatus: true
+        },
+        files: {
+          src: [
+            'bower.json',
+            'package.json',
+            'CHANGELOG.md',
+            'dist/**/*'
+          ]
+        }
+      }
+    },
+    gittag: {
+      bump: {
+        options: {
+          tag: 'v<%= pkg.version %>',
+          noStatus: true
+        }
+      }
+    },
+    gitpush: {
+      bump: {
+        options: {
+          branch: 'master',
+          tags: true
+        }
+      }
     }
   });
 
@@ -83,6 +120,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-conventional-changelog');
+  grunt.loadNpmTasks('grunt-git');
 
   // Default task
   grunt.registerTask('default', ['build']);
@@ -92,6 +131,15 @@ module.exports = function(grunt) {
 
   // Test task
   grunt.registerTask('test', ['karma:build']);
+
+  // CI task
+  grunt.registerTask('ci', ['karma:dev']);
+
+  // Release Task
+  grunt.registerTask('release', ['bump', 'changelog', 'build']);
+
+  // Publish Task
+  grunt.registerTask('publish', ['gitcommit:bump', 'gittag:bump', 'gitpush:bump']);
 
   // Provides the "bump" task.
   grunt.registerTask('bump', 'Increment version number', function() {
@@ -104,14 +152,17 @@ module.exports = function(grunt) {
       while(++idx < parts.length) { parts[idx] = 0; }
       return parts.join('.');
     }
-    var version;
-    function updateFile(file) {
-      var json = grunt.file.readJSON(file);
-      version = json.version = bumpVersion(json.version, versionType || 'patch');
-      grunt.file.write(file, JSON.stringify(json, null, '  '));
-    }
-    // updateFile('package.json');
-    updateFile('bower.json');
+
+    var version = grunt.config.data.pkg.version;
+    version = bumpVersion(version, versionType || 'patch');
+
+    grunt.config.data.pkg.version = version;
+    grunt.file.write('bower.json', JSON.stringify(grunt.config.data.pkg, null, '  '));
+
+    var packagejson = grunt.file.readJSON('package.json');
+    packagejson.version = version;
+    grunt.file.write('package.json', JSON.stringify(packagejson, null, '  '));
+
     grunt.log.ok('Version bumped to ' + version);
   });
 
