@@ -22,7 +22,8 @@ angular.module('platanus.inflector')
 This library registers the `inflector` service, the following methods are provided by the service.
 
 ```html
-inflector.capitalize('the-snake'); // should output TheSnake
+inflector.camelize('the-snake'); // should output theSnake
+inflector.camelize('the-snake', true); // should output TheSnake
 inflector.parameterize('TheCamel'); // should output the-camel
 inflector.parameterize('TheCamel', '_'); // should output the_camel
 inflector.dasherize('the_snake'); // should output the-snake
