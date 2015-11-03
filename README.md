@@ -37,4 +37,10 @@ with his [ActiveSupport's Inflector port](https://code.google.com/p/inflection-j
 
 For now only the english transformation rules are included for the `singularize` and `pluralize` functions.
 
+#### Contributed locales:
+
+We thank the following developers for contributing with new locales rulesets:
+
+* pt-BR: Daniel Fernando Lourusso
+
 **Contributions for new locale rules are very welcomed!**

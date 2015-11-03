@@ -17,6 +17,7 @@ module.exports = function(config) {
 
 	     // our app
       'src/*.js',
+      'src/locale/pt-BR.js',
 
   		// tests
   		'test/**/*.js'

@@ -21,13 +21,14 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= meta.banner %>\n(function(angular, undefined) {\n\'use strict\';\n',
         footer: '})(angular);',
-        process: function(src, filepath) {
+        process: function(src) {
           return src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
         }
       },
       dist: {
         files: {
-          'dist/<%= pkg.name %>.js': 'src/inflector.js'
+          'dist/<%= pkg.name %>.js': 'src/inflector.js',
+          'dist/locale/pt-BR.js': 'src/locale/pt-BR.js'
         }
       }
     },

@@ -2,7 +2,15 @@
 
 describe('', function() {
 
-  beforeEach(module('platanus.inflector'));
+  var provider;
+
+  beforeEach(function () {
+    angular.module('testApp', []).config(function (inflectorProvider) {
+      provider = inflectorProvider;
+    });
+
+    module('platanus.inflector', 'testApp');
+  });
 
   describe('camelize', function() {
     it('should camelize', inject(function(inflector) {
@@ -48,6 +56,13 @@ describe('', function() {
       expect(inflector.singularize('Water')).toEqual('Water');
       expect(inflector.singularize('MICE')).toEqual('Mouse'); // capital letter are not preserved.
       expect(inflector.singularize('Indexes')).toEqual('Index');
+    }));
+  });
+
+  describe('bundled locales', function() {
+    it('should properly set the BR rules', inject(function(inflector) {
+      provider.setLocale('pt-BR');
+      expect(inflector.singularize('fênix')).toEqual('fênix');
     }));
   });
 });
