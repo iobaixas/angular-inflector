@@ -130,7 +130,8 @@ angular.module('platanus.inflector', [])
 
       if(_skip.indexOf(_string.toLowerCase()) === -1) {
         var i = 0, rule;
-        while(rule = _ruleSet[i++]) {
+        while(_ruleSet.length > i) {
+          rule = _ruleSet[i++];
           if(_string.match(rule[0])) {
             return _string.replace(rule[0], rule[1]);
           }
