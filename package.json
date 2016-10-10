@@ -15,6 +15,10 @@
     "node": ">= 0.9"
   },
   "devDependencies": {
+    "bower": "*",
+    "grunt": "^0.4.3",
+    "karma": "~0.12",
+    "jasmine": "*",
     "grunt-cli": ">= 0.1.7",
     "grunt-contrib-concat": "*",
     "grunt-contrib-jshint": "*",
@@ -22,7 +26,6 @@
     "grunt-bower": "*",
     "grunt-bower-task": "*",
     "grunt-karma": "~0.8",
-    "karma-cli": "*",
     "karma-jasmine": "*",
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
