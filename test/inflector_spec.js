@@ -18,6 +18,7 @@ describe('', function() {
       expect(inflector.camelize('snake_case')).toEqual('snakeCase');
       expect(inflector.camelize('spaced case')).toEqual('spacedCase');
       expect(inflector.camelize('dashed-constant', true)).toEqual('DashedConstant');
+      expect(inflector.camelize('CamelCase')).toEqual('camelCase');
     }));
   });
 
@@ -66,4 +67,3 @@ describe('', function() {
     }));
   });
 });
-
