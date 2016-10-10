@@ -1,6 +1,6 @@
 /**
  * Angular inflection library
- * @version v0.2.3 - 2015-11-03
+ * @version v0.2.4 - 2016-10-10
  * @link https://github.com/platanus/angular-inflector
  * @author Ignacio Baixas <ignacio@platan.us>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -163,7 +163,7 @@ angular.module('platanus.inflector', [])
           camelize: function(_string, _constant) {
             if (typeof _string !== 'string') return _string;
             return _string.replace(/(?:^[-_\s]*|[-_\s]+)([A-Z\d])/gi, function (match, _first, _index) {
-              return (!_constant && _index === 0) ? _first : _first.toUpperCase();
+              return (!_constant && _index === 0) ? _first.toLowerCase() : _first.toUpperCase();
             });
           },
 
