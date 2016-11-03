@@ -7,7 +7,7 @@ angular.module('platanus.inflector')
     uncountable: ['tórax', 'tenis', 'fénix' ],
     plural: [
       [new RegExp('^(japon|escoc|ingl|dinamarqu|fregu|portugu)(es)', 'gi'), '$1eses'],
-      [new RegExp('(z)$', 'gi'),                                            '$1ces],
+      [new RegExp('(z)$', 'gi'),                                            '$1ces'],
       [new RegExp('(r)$', 'gi'),                                            '$1es'],
       [new RegExp('([^aeéiou])$', 'gi'),                                    '$1es'],
       [new RegExp('^(paí)s$', 'gi'),                                        '$1ses'],
