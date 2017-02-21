@@ -1,3 +1,8 @@
+<a name="0.2.5"></a>
+### 0.2.5 (2017-02-21)
+
+* Fixes convention for virus and octopus plurals (Submitted by @KarolS)
+
 <a name="0.2.4"></a>
 ### 0.2.4 (2016-10-10)
 

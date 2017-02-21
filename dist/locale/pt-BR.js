@@ -1,6 +1,6 @@
 /**
  * Angular inflection library
- * @version v0.2.4 - 2016-10-10
+ * @version v0.2.5 - 2017-02-21
  * @link https://github.com/platanus/angular-inflector
  * @author Ignacio Baixas <ignacio@platan.us>
  * @license MIT License, http://www.opensource.org/licenses/MIT
